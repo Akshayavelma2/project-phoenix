@@ -1,5 +1,6 @@
 function calculateTotal(amount) {
-  return amount * 0.9; // 10% discount
+  const discounted = amount * 0.9;
+  return discounted * 1.18;
 }
 
 module.exports = calculateTotal;
