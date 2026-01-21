@@ -24,14 +24,15 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo "Test stage"
-                bat '''
-                if not exist results mkdir results
-                echo TESTS PASSED > results\\test-results.txt
-                '''
-            }
-        }
+    steps {
+        echo "Running unit tests"
+        bat '''
+        python --version
+        python -m pip install pytest
+        pytest
+        '''
+    }
+}
 
         stage('Deploy') {
             steps {
